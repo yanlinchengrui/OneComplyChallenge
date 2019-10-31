@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <title>Main Page</title>
+
+  <style>
+    body {
+      font-size: 20px;
+      padding: 50px;
+    }
+
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th {
+      border-bottom: 1px solid black;
+      text-align: center;
+      padding: 8px;
+    }
+
+    td {
+      border: 1px solid black;
+      text-align: left;
+      padding: 8px;
+      width: 50%;
+    }
+
+    td:first-child {
+      font-weight: bold;
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <th></th>
+      <th>Dependents</th>
+    </tr>
+    <% for (let key in rez) { %>
+    <tr>
+      <td> <%= key %> </td>
+      <% if (key === 'Home Address') { %>
+      <td>
+        <%= rez[key][0] %>
+        <br>
+        <%= rez[key][1] %>, <%= rez[key][2] %> <%= rez[key][3] %>
+      </td>
+      <% } else { %>
+      <td> <%= rez[key] %> </td>
+      <% } %>
+    </tr>
+    <% } %>
+  </table>
+</body>
+
+</html>
