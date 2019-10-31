@@ -8,7 +8,7 @@ require('dotenv').config()
 app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 
-const PORT = 8080; // default port 8080
+const PORT = process.env.PORT || 8080;
 const api = 'https://www.formstack.com/api/v2';
 
 const submission = `${api}/submission/551042206.json?oauth_token=${process.env.OAUTH_TOKEN}`;
